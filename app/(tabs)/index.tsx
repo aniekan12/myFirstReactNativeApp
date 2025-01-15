@@ -1,5 +1,6 @@
 import Grid from "@/components/Grid";
 import { Colors } from "@/constants/Colors";
+import { Link } from "expo-router";
 import { useState } from "react";
 import {
   View,
@@ -14,6 +15,7 @@ import {
   ActivityIndicator,
   Alert,
 } from "react-native";
+import StylingTryOut from "../stylingTryOut";
 const myImage = require("@/assets/images/icon.png");
 
 export default function HomeScreen() {
@@ -39,6 +41,8 @@ export default function HomeScreen() {
         barStyle="default"
         hidden={statusBarVisible}
       />
+      <StylingTryOut />
+
       {isLoading && (
         <ActivityIndicator
           size="small"
@@ -58,6 +62,13 @@ export default function HomeScreen() {
           setTimeout(() => {
             setIsLoading(false);
           }, 3000);
+        }}
+      />
+      <Button
+        title="next page"
+        color="black"
+        onPress={() => {
+          <Link href="/stylingTryOut" />;
         }}
       />
       <Grid props={props} />
