@@ -31,19 +31,19 @@ export default function HomeScreen() {
     <View
       style={{
         flex: 1,
-        padding: 60,
+        padding: 20,
 
         backgroundColor: "pink",
       }}
     >
-      <StatusBar
+      {/* <StatusBar
         backgroundColor={Colors.dark.tint}
         barStyle="default"
         hidden={statusBarVisible}
-      />
+      /> */}
       <StylingTryOut />
 
-      {isLoading && (
+      {/* {isLoading && (
         <ActivityIndicator
           size="small"
           color={Colors.light.tint}
@@ -206,7 +206,7 @@ export default function HomeScreen() {
             color={"black"}
           />
         </View>
-      </Modal>
+      </Modal> */}
     </View>
   );
 }
