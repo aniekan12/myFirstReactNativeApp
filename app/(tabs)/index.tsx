@@ -14,8 +14,10 @@ import {
   Button,
   ActivityIndicator,
   Alert,
+  StyleSheet,
 } from "react-native";
 import StylingTryOut from "../stylingTryOut";
+import Box from "@/components/Box";
 const myImage = require("@/assets/images/icon.png");
 
 export default function HomeScreen() {
@@ -28,20 +30,17 @@ export default function HomeScreen() {
   };
 
   return (
-    <View
-      style={{
-        flex: 1,
-        padding: 20,
-
-        backgroundColor: "pink",
-      }}
-    >
+    <View style={styles.container}>
+      <Box style={{ backgroundColor: "cyan" }}>Box 1</Box>
+      <Box style={{ backgroundColor: "green" }}>Box 2</Box>
+      <Box style={{ backgroundColor: "orange" }}>Box 3</Box>
+      <Box style={{ backgroundColor: "pink" }}>Box 4</Box>
       {/* <StatusBar
         backgroundColor={Colors.dark.tint}
         barStyle="default"
         hidden={statusBarVisible}
       /> */}
-      <StylingTryOut />
+      {/* <StylingTryOut /> */}
 
       {/* {isLoading && (
         <ActivityIndicator
@@ -210,3 +209,14 @@ export default function HomeScreen() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 64,
+    flexDirection: "row",
+    borderColor: "red",
+    borderWidth: 4,
+    backgroundColor: "white",
+    flex: 1,
+  },
+});
