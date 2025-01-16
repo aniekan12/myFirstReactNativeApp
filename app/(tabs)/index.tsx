@@ -31,15 +31,56 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <Box style={{ backgroundColor: "cyan" }}>Box 1</Box>
-      <Box style={{ backgroundColor: "green" }}>Box 2</Box>
+      <Box
+        style={{
+          backgroundColor: "cyan",
+
+          // flexShrink: 1,
+        }}
+      >
+        Box 1
+      </Box>
+      <Box
+        style={{
+          backgroundColor: "green",
+
+          // flexShrink: 5,
+        }}
+      >
+        Box 2
+      </Box>
       <Box style={{ backgroundColor: "orange" }}>Box 3</Box>
-      <Box style={{ backgroundColor: "pink" }}>Box 4</Box>
+      <Box
+        style={{
+          backgroundColor: "pink",
+          // alignSelf: "auto",
+          // flexBasis: 300,
+          // flex: 1,
+        }}
+      >
+        Box 4
+      </Box>
+      <Box
+        style={{
+          backgroundColor: "blue",
+          position: "absolute",
+          top: 100,
+          left: 100,
+          // alignSelf: "auto",
+          // flexBasis: 300,
+          // flex: 1,
+        }}
+      >
+        Box 4
+      </Box>
+      <Box style={{ backgroundColor: "orange" }}>Box 4</Box>
+      <Box style={{ backgroundColor: "yellow" }}>Box 4</Box>
+      <Box style={{ backgroundColor: "red" }}>Box 4</Box>
       {/* <StatusBar
         backgroundColor={Colors.dark.tint}
         barStyle="default"
         hidden={statusBarVisible}
-      /> */}
+      />
       {/* <StylingTryOut /> */}
 
       {/* {isLoading && (
@@ -213,10 +254,18 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     marginTop: 64,
-    flexDirection: "row",
+    // flexDirection: "row",
+    // alignItems: "flex-start",
     borderColor: "red",
+    // alignContent: "center",
     borderWidth: 4,
     backgroundColor: "white",
+    // rowGap: 20,
+    // columnGap: 10,
+    // gap: 20,
     flex: 1,
+    // width: 300,
+    // height: 300,
+    // height: 200,
   },
 });
