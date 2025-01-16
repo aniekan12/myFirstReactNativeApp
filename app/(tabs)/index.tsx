@@ -31,7 +31,10 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <Box
+      <View style={styles.box}>
+        <Text style={styles.text}>{props.name}</Text>
+      </View>
+      {/* <Box
         style={{
           backgroundColor: "cyan",
 
@@ -75,7 +78,7 @@ export default function HomeScreen() {
       </Box>
       <Box style={{ backgroundColor: "orange" }}>Box 4</Box>
       <Box style={{ backgroundColor: "yellow" }}>Box 4</Box>
-      <Box style={{ backgroundColor: "red" }}>Box 4</Box>
+      <Box style={{ backgroundColor: "red" }}>Box 4</Box> */}
       {/* <StatusBar
         backgroundColor={Colors.dark.tint}
         barStyle="default"
@@ -252,14 +255,26 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  text: {
+    color: "white",
+    fontSize: 24,
+  },
+  box: {
+    width: 300,
+    height: 300,
+    backgroundColor: "lightblue",
+    alignItems: "center",
+    justifyContent: "center",
+  },
   container: {
     marginTop: 64,
     // flexDirection: "row",
-    // alignItems: "flex-start",
-    borderColor: "red",
+    alignItems: "center",
+    justifyContent: "center",
+    // borderColor: "red",
     // alignContent: "center",
-    borderWidth: 4,
-    backgroundColor: "white",
+    // borderWidth: 4,/
+    backgroundColor: "plum",
     // rowGap: 20,
     // columnGap: 10,
     // gap: 20,
