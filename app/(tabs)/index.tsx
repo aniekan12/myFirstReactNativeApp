@@ -1,11 +1,12 @@
 import Grid from "@/components/Grid";
 import { Colors } from "@/constants/Colors";
 import { Link } from "expo-router";
-import { useState } from "react";
+// import { useState, useEffect } from "react";
 import {
   View,
   Text,
   StatusBar,
+  useWindowDimensions,
   Image,
   Pressable,
   ImageBackground,
@@ -14,6 +15,7 @@ import {
   Button,
   ActivityIndicator,
   Alert,
+  Dimensions,
   StyleSheet,
 } from "react-native";
 import StylingTryOut from "../stylingTryOut";
@@ -21,18 +23,58 @@ import Box from "@/components/Box";
 const myImage = require("@/assets/images/icon.png");
 
 export default function HomeScreen() {
-  const [modalVisible, setModalVisible] = useState(false);
-  const [statusBarVisible, setStatusBarVisible] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [modalVisible, setModalVisible] = useState(false);
+  // const [statusBarVisible, setStatusBarVisible] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   const props = {
     name: "anii, react native engineer",
   };
 
+  const { width, height } = useWindowDimensions();
+
+  // const [dimensions, setDimensionsSize] = useState({
+  //   width: Dimensions.get("window").width,
+  //   height: Dimensions.get("window").height,
+  // });
+
+  // useEffect(() => {
+  //   const subscription = Dimensions.addEventListener("change", ({ window }) => {
+  //     setDimensionsSize({
+  //       width: window.width,
+  //       height: window.height,
+  //     });
+  //     return () => {
+  //       subscription?.remove();
+  //     };
+  //   });
+  // });
+
+  // const { width, height } = dimensions;
+
   return (
     <View style={styles.container}>
-      <View style={styles.box}>
-        <Text style={styles.text}>{props.name}</Text>
+      <View
+        style={[
+          styles.box,
+          {
+            width: width > 500 ? "70%" : "90%",
+            height: height > 600 ? "60%" : "90%",
+          },
+        ]}
+      >
+        <Text
+          style={[
+            {
+              color: "white",
+            },
+            {
+              fontSize: width > 500 ? 50 : 24,
+            },
+          ]}
+        >
+          {props.name}
+        </Text>
       </View>
       {/* <Box
         style={{
@@ -257,11 +299,11 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   text: {
     color: "white",
-    fontSize: 24,
+    // fontSize: width > 500 ? 50 : 24,
   },
   box: {
-    width: 300,
-    height: 300,
+    // width: windowWidth > 500 ? "70%" : "90%",
+    // height: windowHeight > 600 ? "60%" : "90%",
     backgroundColor: "lightblue",
     alignItems: "center",
     justifyContent: "center",
